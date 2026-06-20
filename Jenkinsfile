@@ -25,7 +25,7 @@ pipeline{
         }
       stage("Docker Push"){
            steps{
-               bat "docker push spring-jenkins-integration:v1";
+               bat "docker push spring-jenkins-integration";
             }
         }
 
