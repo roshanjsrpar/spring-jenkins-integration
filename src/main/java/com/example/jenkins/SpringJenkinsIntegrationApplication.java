@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringJenkinsIntegrationApplication {
 	
-	@GetMapping("/wish")
+	@GetMapping("/wishmessage")
 	public String wishMessage() {
 		return "Welcome to first web page";
 	}

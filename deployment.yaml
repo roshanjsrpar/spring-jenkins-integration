@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: spring-jenkins-integration
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: spring-jenkins-integration
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: spring-jenkins-integration:latest
+        image: spring-jenkins-integration:v1
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
