@@ -18,14 +18,15 @@ pipeline{
             }
         }
 
-      stage("Docker Build"){
-           steps{
-               bat "docker build -t spring-jenkins-integration:v1 .";
+	  stage("Docker Build") {
+            steps {
+                bat "docker build -t rosjsr/spring-jenkins-integration:v1 ."
             }
         }
-      stage("Docker Push"){
-           steps{
-               bat "docker push spring-jenkins-integration";
+
+        stage("Docker Push") {
+            steps {
+                bat "docker push rosjsr/spring-jenkins-integration:v1"
             }
         }
 
@@ -35,7 +36,7 @@ pipeline{
                 set KUBECONFIG=C:\\Users\\Shruti Kumari\\.kube\\config
                 kubectl apply -f deployment.yaml
                 kubectl apply -f service.yaml
-                kubectl rollout status deployment/spring-jenkins-integration
+                kubectl rollout status deployment/spring-jenkin-integration
                 '''
             }
         }
