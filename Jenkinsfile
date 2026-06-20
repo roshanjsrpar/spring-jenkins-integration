@@ -37,7 +37,6 @@ pipeline{
                 kubectl apply -f deployment.yaml
                 kubectl apply -f service.yaml
                 kubectl rollout status deployment/spring-jenkins-integration
-                kubectl port-forward service/spring-jenkins-integration-service 8080:8080
                 '''
             }
         }
