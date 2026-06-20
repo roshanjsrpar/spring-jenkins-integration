@@ -13,6 +13,10 @@ public class SpringJenkinsIntegrationApplication {
 	public String wishMessage() {
 		return "Welcome to first web page";
 	}
+	@GetMapping("/welcome")
+	public String welcome() {
+		return "Welcome to web page";
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringJenkinsIntegrationApplication.class, args);

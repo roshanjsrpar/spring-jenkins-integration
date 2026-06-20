@@ -36,7 +36,8 @@ pipeline{
                 set KUBECONFIG=C:\\Users\\Shruti Kumari\\.kube\\config
                 kubectl apply -f deployment.yaml
                 kubectl apply -f service.yaml
-                kubectl rollout status deployment/spring-jenkin-integration
+                kubectl rollout status deployment/spring-jenkins-integration
+                kubectl port-forward service/spring-jenkins-integration-service 8080:8080
                 '''
             }
         }
