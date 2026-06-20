@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-jenkins-integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-jenkins-integration
+  template:
+    metadata:
+      labels:
+        app: spring-jenkins-integration
+    spec:
+      containers:
+      - name: spring-boot-app
+        image: spring-jenkins-integration:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
